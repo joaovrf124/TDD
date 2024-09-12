@@ -7,3 +7,24 @@ def filtrar_aprovados(estudante):
     for nota in estudante["notas"]:
         nota_soma += nota    
     return nota_soma/  len(estudante["notas"]) >= 7
+
+
+def add_media(estudante):
+    nota_soma = 0
+    for nota in estudante["notas"]:
+        nota_soma += nota    
+    estudante["media"] = round(nota_soma/  len(estudante["notas"]), 2)
+    return estudante
+        
+
+def estudantes_aprovados(estudantes: list):
+    aprovados = filter(filtrar_aprovados, estudantes)
+    aprovados = map(add_media, aprovados)
+    return 
+
+    
+    
+
+estudantes_aprovados(estudantes)
+
+print(estudantes_aprovados)
